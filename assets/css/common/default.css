@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: 0;
+}
+
+button.btn-default, button.btn-negative, button.btn-positive {
+	display: block;
+	padding: 10px 15px;
+	border: 0;
+	box-shadow: 0 0 5px #777;
+	cursor: pointer;
+	border-radius: 3px;
+	font-size: 12pt;
+}
+
+button.btn-default {
+	background-color: #2196F3;
+	color: white;
+}
+
+button.btn-default:hover {
+	background-color: #1E88E5;
+}
+
+button.btn-negative {
+	background-color: #F44336;
+	color: white;
+}
+
+button.btn-negative:hover {
+	background-color: #E53935;
+}
+
+button.btn-positive {
+	background-color: #43A047;
+	color: white;
+}
+
+button.btn-positive:hover {
+	background-color: #388E3C;
+}
