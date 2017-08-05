@@ -1,9 +1,9 @@
 # template
 
-ini adalah template codeigniter
+ini adalah template codeigniter 
 
 ### Table of Contents
-1. General_controller
+1. [General_controller](https://github.com/christianlimanto95/template/blob/master/README.md#1-dalam-folder-core-terdapat-general_controller)
 2. File yang harus ada dalam setiap page
 3. Letak File2 Umum
 4. Format Penulisan
