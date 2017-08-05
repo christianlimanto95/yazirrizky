@@ -2,25 +2,36 @@
 
 ini adalah template codeigniter
 
+
 ### Dalam folder `core`, terdapat `General_controller`
 Setiap controller selalu `extends General_controller`.
 
 Dalam General_controller terdapat function2 umum yg dapat dipakai di controller yg membutuhkan, yaitu : 
 - `view()`
-- `isLogggedIn()`
-- `loadAdditionalCss()`
-- `loadAdditionalJs()`
+- `is_loggged_in()`
+- `load_additional_css()`
+- `load_additional_js()`
 - dll.
 
 Contoh :
 ```
 Class Home_controller extends General_controller {
-	public __construct() {
+	public function __construct() {
 		parent::__construct();
+	}
+	
+	public function index() {
+		$data = array(
+			"title" => "My Home"
+		);
+		
+		parent::view("home", $data);
 	}
 }
 ```
+Untuk memanggil view, selalu dengan `pareng::view("nama_page", $data);`.
 
+Variabel `$data` harus ada minimal `title`, karena ini akan diproses di file `header.php` menjadi nama tab halaman pada browser.
 
 ### Untuk setiap page, file yg harus ada :
 - Controller
@@ -37,6 +48,14 @@ Class Home_controller extends General_controller {
 - JS : home.js
 
 
-### Letak CSS dan JS :
-CSS terletak di folder `assets/css/nama_file.css`
-JS terletak di folder `assets/js/nama_file.js`
+### Letak File2 Umum :
+- `header` terletak di folder `view/template/header.php`
+- `footer` terletak di folder `view/template/footer.php`
+- CSS terletak di folder `assets/css/nama_file.css`
+- JS terletak di folder `assets/js/nama_file.js`
+
+
+### Format Penulisan
+- Setiap nama function dan variabel pada controller dan model, jika lebih dari 1 kata, selalu dihubungkan dengan underscore `_`. Contoh :
+- `function load_additional_css()`
+- nama variabel `$user_email`
