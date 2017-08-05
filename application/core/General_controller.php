@@ -29,7 +29,7 @@ class General_controller extends CI_Controller
 		$this->additional_files .= "<script src='" . base_url("assets/js/template/" . $file_name . ".js") . "'></script>";
 	}
 
-    public function template($file, $data){
+    public function view($file, $data){
 		$data["additional_files"] = $this->additional_files;
 		$data["page_name"] = $file;
 		

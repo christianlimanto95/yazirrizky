@@ -16,6 +16,6 @@ class Home extends General_controller {
 			"title" => "Home"
 		);
 		
-		$this->template("home", $data);
+		parent::view("home", $data);
 	}
 }
