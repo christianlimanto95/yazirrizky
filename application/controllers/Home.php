@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-//include the base class
-require_once("application/core/Front_controller.php");
+//include general controller supaya bisa extends General_controller
+require_once("application/core/General_controller.php");
 
-class Home extends Front_controller {
+class Home extends General_controller {
 	public function __construct() {
 		parent::__construct();
-		$this->load->model("front/Home_model");
+		$this->load->model("Home_model");
 	}
 	
 	public function index()

@@ -31,6 +31,16 @@ class General_controller extends CI_Controller
 
     public function template($file, $data){
 		$data["additional_files"] = $this->additional_files;
-		return $data;
+		$data["page_name"] = $file;
+		
+        $this->load->view('common/header', $data);
+        $this->load->view($file, $data);
+        $this->load->view('common/footer');
+    }
+
+	public function cekLogin() {
+        if ($this->session->userdata('isLoggedIn') != 1) {
+            redirect(base_url());
+        }
     }
 }
