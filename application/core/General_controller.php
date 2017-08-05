@@ -16,16 +16,16 @@ class General_controller extends CI_Controller
         $this->load->model('common/General_model');
     }
 
-	public function loadModule($module_name) {
-		$this->loadAdditionalCss($module_name);
-		$this->loadAdditionalJs($module_name);
+	public function load_module($module_name) {
+		$this->load_additional_css($module_name);
+		$this->load_additional_js($module_name);
 	}
 	
-	public function loadAdditionalCss($file_name) {
+	public function load_additional_css($file_name) {
 		$this->additional_files .= "<link href='" . base_url("assets/css/template/" . $file_name . ".css") . "' rel='stylesheet'>";
 	}
 	
-	public function loadAdditionalJs($file_name) {
+	public function load_additional_js($file_name) {
 		$this->additional_files .= "<script src='" . base_url("assets/js/template/" . $file_name . ".js") . "'></script>";
 	}
 
@@ -38,7 +38,7 @@ class General_controller extends CI_Controller
         $this->load->view('common/footer');
     }
 
-	public function cekLogin() {
+	public function cek_login() {
         if ($this->session->userdata('isLoggedIn') != 1) {
             redirect(base_url());
         }
