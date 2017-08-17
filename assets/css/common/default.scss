@@ -8,10 +8,31 @@ $btn-positive-background-color: #43A047;
 $btn-positive-hover-background-color: #388E3C;
 
 $btn-font-size: 12pt;
+$default-font-size: 12pt;
+
+@mixin box-sizing($value) {
+	-webkit-box-sizing: $value;
+	-moz-box-sizing: $value;
+	box-sizing: $value;
+}
 
 * {
-	outline: 0;
 	font: 100% $font-stack;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	@include box-sizing(border-box);
+}
+
+input[type="text"], input[type="textarea"] {
+	border: 0;
+	border-bottom: 2px solid #000;
+	font-size: $default-font-size;
+	padding-bottom: 2px;
+
+	&:focus {
+		border-bottom: 2px solid blue;
+	}
 }
 
 button {
@@ -29,7 +50,7 @@ button {
     background-color: $btn-default-background-color;
 	color: white;
 
-	:hover {
+	&:hover {
 		background-color: $btn-default-hover-background-color;
 	}
 }
@@ -39,7 +60,7 @@ button {
 	background-color: $btn-negative-background-color;
 	color: white;
 
-	:hover {
+	&:hover {
 		background-color: $btn-negative-hover-background-color;
 	}
 }
@@ -49,7 +70,7 @@ button {
 	background-color: $btn-positive-background-color;
 	color: white;
 
-	:hover {
+	&:hover {
 		background-color: $btn-positive-hover-background-color;
 	}
 }

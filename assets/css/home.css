@@ -2,3 +2,7 @@ button {
 	float: left;
 	margin-left: 20px;
 }
+
+input {
+	margin-left: 50px;
+}

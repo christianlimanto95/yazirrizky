@@ -26,7 +26,7 @@ class General_controller extends CI_Controller
 	}
 	
 	public function load_additional_js($file_name) {
-		$this->additional_files .= "<script src='" . base_url("assets/js/template/" . $file_name . ".js") . "'></script>";
+		$this->additional_files .= "<script src='" . base_url("assets/js/template/" . $file_name . ".js") . "' defer></script>";
 	}
 
     public function view($file, $data){
