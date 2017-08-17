@@ -1,0 +1,55 @@
+$font-stack: Helvetica, sans-serif;
+
+$btn-default-background-color: #2196F3;
+$btn-default-hover-background-color: #1E88E5;
+$btn-negative-background-color: #F44336;
+$btn-negative-hover-background-color: #E53935;
+$btn-positive-background-color: #43A047;
+$btn-positive-hover-background-color: #388E3C;
+
+$btn-font-size: 12pt;
+
+* {
+	outline: 0;
+	font: 100% $font-stack;
+}
+
+button {
+    display: block;
+	padding: 10px 15px;
+	border: 0;
+	box-shadow: 0 0 5px #777;
+	cursor: pointer;
+	border-radius: 3px;
+	font-size: $btn-font-size;
+}
+
+.btn-default {
+    @extend button;
+    background-color: $btn-default-background-color;
+	color: white;
+
+	:hover {
+		background-color: $btn-default-hover-background-color;
+	}
+}
+
+.btn-negative {
+    @extend button;
+	background-color: $btn-negative-background-color;
+	color: white;
+
+	:hover {
+		background-color: $btn-negative-hover-background-color;
+	}
+}
+
+.btn-positive {
+	@extend button;
+	background-color: $btn-positive-background-color;
+	color: white;
+
+	:hover {
+		background-color: $btn-positive-hover-background-color;
+	}
+}
