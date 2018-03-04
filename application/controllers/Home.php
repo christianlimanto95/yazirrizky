@@ -20,6 +20,7 @@ class Home extends General_controller {
 	}
 
 	public function insert() {
+		parent::load_module("DatePickerX.min");
 		$data = array(
 			"title" => "Insert"
 		);

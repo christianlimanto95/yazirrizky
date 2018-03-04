@@ -22,11 +22,11 @@ class General_controller extends CI_Controller
 	}
 	
 	public function load_additional_css($file_name) {
-		$this->additional_files .= "<link href='" . base_url("assets/css/template/" . $file_name . ".css") . "' rel='stylesheet'>";
+		$this->additional_files .= "<link href='" . base_url("assets/css/common/" . $file_name . ".css") . "' rel='stylesheet'>";
 	}
 	
 	public function load_additional_js($file_name) {
-		$this->additional_files .= "<script src='" . base_url("assets/js/template/" . $file_name . ".js") . "' defer></script>";
+		$this->additional_files .= "<script src='" . base_url("assets/js/common/" . $file_name . ".js") . "' defer></script>";
 	}
 
     public function view($file, $data){

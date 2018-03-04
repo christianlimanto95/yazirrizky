@@ -35,5 +35,18 @@
                 </div>
             </div>
         </div>
+        <div class="form-item">
+            <div class="form-question">Select Date Range</div>
+            <div class="form-answer">
+                <input type="text" class="form-input input-date-start" />
+                <input type="text" class="form-input input-date-end" />
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="form-question">Numbers Only</div>
+            <div class="form-answer">
+                <input type="text" class="form-input input-number" data-input-type="number" />
+            </div>
+        </div>
     </form>
 </div>
