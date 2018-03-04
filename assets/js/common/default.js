@@ -1,5 +1,5 @@
 $(function() {
-    $(document).on("keydown", "input[data-type='number']", function(e) {
+    $(document).on("keydown", "input[data-input-type='number']", function(e) {
         isNumber(e);
     });
 

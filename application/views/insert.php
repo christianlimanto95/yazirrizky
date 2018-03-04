@@ -11,12 +11,13 @@
                     <div class="gender-image" style="background-image: url(<?php echo base_url("assets/images/female.png"); ?>);"></div>
                     <div class="gender-text">Female</div>
                 </div>
+                <input type="hidden" class="gender-value" value="m" />
             </div>
         </div>
         <div class="form-item">
             <div class="form-question">Your Email</div>
             <div class="form-answer">
-                <input type="email" class="form-input" />
+                <input type="email" class="form-input" maxlength="100" />
             </div>
         </div>
         <div class="form-item">
@@ -45,8 +46,9 @@
         <div class="form-item">
             <div class="form-question">Numbers Only</div>
             <div class="form-answer">
-                <input type="text" class="form-input input-number" data-input-type="number" />
+                <input type="text" class="form-input input-number" data-input-type="number" maxlength="5" />
             </div>
         </div>
+        <div class="button">INSERT</div>
     </form>
 </div>

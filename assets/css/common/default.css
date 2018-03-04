@@ -26,6 +26,13 @@ body {
   color: #444;
 }
 
+.button, .select, .options {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @media all and (max-width: 1279px) {
   .div-mobile {
     display: block;
