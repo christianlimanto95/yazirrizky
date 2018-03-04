@@ -34,4 +34,22 @@ class Home_model extends CI_Model
         $this->db->limit(1);
         return $this->db->get("data")->result();
     }
+
+    function update($data) {
+        $date_item = explode("-", $data["date_start"]);
+        $data["date_start"] = $date_item[2] . "-" . $date_item[1] . "-" . $date_item[0];
+        $date_item = explode("-", $data["date_end"]);
+        $data["date_end"] = $date_item[2] . "-" . $date_item[1] . "-" . $date_item[0];
+        $updateData = array(
+            "data_name" => $data["name"],
+            "data_gender" => $data["gender"],
+            "data_email" => $data["email"],
+            "room_id" => $data["room_id"],
+            "data_date_start" => $data["date_start"],
+            "data_date_end" => $data["date_end"],
+            "data_number" => $data["number"]
+        );
+        $this->db->where("data_id", $data["id"]);
+        $this->db->update("data", $updateData);
+    }
 }

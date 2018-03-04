@@ -49,6 +49,24 @@ $(function() {
 	});
 });
 
+function changeRadiobuttonValue(value) {
+	$(".form-radiobutton").removeClass("selected");
+	var selected = $(".form-radiobutton[data-value='" + value + "']");
+	selected.addClass("selected");
+
+	var value = selected.data("value");
+	var valueElement = selected.data("value-element");
+	$(valueElement).val(value);
+}
+
+function changeSelectValue(select, value) {
+	var selectTextValue = select.find(".option[data-value='" + value + "']").html();
+	select.find(".select-text").html(selectTextValue);
+	var valueElement = select.data("value-element");
+	$(valueElement).val(value);
+	select.trigger("onchanged");
+}
+
 function isNumber(e) {
 	if (e.key.length == 1) {
 		if ("0123456789".indexOf(e.key) < 0) {

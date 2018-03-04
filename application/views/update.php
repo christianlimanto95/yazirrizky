@@ -44,7 +44,7 @@
             <div class="form-item">
                 <div class="form-question">Select Room Type</div>
                 <div class="form-answer">
-                    <div class="select" data-value="1" data-value-element=".room-value">
+                    <div class="select select-room" data-value="1" data-value-element=".room-value">
                         <input type="hidden" class="room-value" name="room_id" value="1" />
                         <div class="select-text">Deluxe Room</div>
                         <div class="select-icon" style="background-image: url(<?php echo base_url("assets/icons/ic_keyboard_arrow_down_black_24px.svg"); ?>);"></div>
