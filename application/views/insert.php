@@ -1,6 +1,12 @@
 <div class="content">
     <form method="post" action="<?php echo base_url("home/do_insert"); ?>">
         <div class="form-item">
+            <div class="form-question">Your Name</div>
+            <div class="form-answer">
+                <input type="text" class="form-input" name="name" maxlength="100" />
+            </div>
+        </div>
+        <div class="form-item">
             <div class="form-question">Your Gender</div>
             <div class="form-answer">
                 <div class="gender form-radiobutton selected" data-value="m" data-value-element=".gender-value">
