@@ -18,4 +18,11 @@ class Home extends General_controller {
 		
 		parent::view("home", $data);
 	}
+
+	public function insert() {
+		$data = array(
+			"title" => "Insert"
+		);
+		parent::view("insert", $data);
+	}
 }
