@@ -26,4 +26,26 @@ class Home extends General_controller {
 		);
 		parent::view("insert", $data);
 	}
+
+	function do_insert() {
+		$gender = $this->input->post("gender", true);
+		$email = $this->input->post("email", true);
+		$room_id = $this->input->post("room_id", true);
+		$date_start = $this->input->post("date_start", true);
+		$date_end = $this->input->post("date_end", true);
+		$number = $this->input->post("number", true);
+
+		$data = array(
+			"gender" => $gender,
+			"email" => $email,
+			"room_id" => $room_id,
+			"date_start" => $date_start,
+			"date_end" => $date_end,
+			"number" => $number
+		);
+
+		$this->Home_model->insert($data);
+
+		header("Location: " . base_url("insert"));
+	}
 }

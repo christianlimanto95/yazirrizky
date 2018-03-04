@@ -4,6 +4,9 @@ $(function() {
 		if ($(this).data("value") != parent.find(".form-radiobutton.selected").data("value")) {
 			parent.find(".form-radiobutton").removeClass("selected");
 			$(this).addClass("selected");
+			var value = $(this).data("value");
+			var valueElement = $(this).data("value-element");
+			$(valueElement).val(value);
 		}
 	});
 
@@ -23,8 +26,10 @@ $(function() {
 
 		var select = $(this).closest(".select");
 		select.find(".select-text").html(text);
-		
 		select.attr("data-value", value);
+
+		var valueElement = select.data("value-element");
+		$(valueElement).val(value);
 	});
 
 	$(".input-date-start")[0].DatePickerX.init({
@@ -35,6 +40,10 @@ $(function() {
 	$(".input-date-end")[0].DatePickerX.init({
 		format: "dd-mm-yyyy",
 		minDate: $(".input-date-start")[0]
+	});
+
+	$(".button-insert").on("click", function() {
+		$("form").submit();
 	});
 
 	$(document).on("click", function(e) {
