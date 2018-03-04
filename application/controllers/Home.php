@@ -128,8 +128,16 @@ class Home extends General_controller {
 				"insert" => "",
 				"update" => "",
 				"delete" => "selected"
-			)
+			),
+			"data" => $this->Home_model->get_update_index()
 		);
 		parent::view("delete", $data);
+	}
+
+	public function do_delete() {
+		$id = $this->input->post("data_id", true);
+		$this->Home_model->delete($id);
+
+		header("Location: " . base_url("delete"));
 	}
 }

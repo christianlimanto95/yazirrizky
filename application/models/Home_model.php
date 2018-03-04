@@ -26,6 +26,7 @@ class Home_model extends CI_Model
 
     function get_update_index() {
         $this->db->select("data_id, data_name");
+        $this->db->where("status", 1);
         return $this->db->get("data")->result();
     }
 
@@ -50,6 +51,14 @@ class Home_model extends CI_Model
             "data_number" => $data["number"]
         );
         $this->db->where("data_id", $data["id"]);
+        $this->db->update("data", $updateData);
+    }
+
+    function delete($id) {
+        $this->db->where("data_id", $id);
+        $updateData = array(
+            "status" => 0
+        );
         $this->db->update("data", $updateData);
     }
 }

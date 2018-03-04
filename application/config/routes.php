@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route["insert"] = "home/insert";
 $route["update"] = "home/update";
+$route["delete"] = "home/delete";

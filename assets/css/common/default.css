@@ -26,7 +26,7 @@ body {
   color: #444;
 }
 
-.button, .select, .options {
+.button, .select, .options, .dialog-button {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
