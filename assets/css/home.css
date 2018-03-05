@@ -8,6 +8,12 @@
 	font-size: 12pt;
 }
 
+.button-email {
+	width: auto;
+	font-size: 12pt;
+	padding: 10px;
+}
+
 #piechart, #columnchart {
 	margin-top: 75px;
 	width: 100%;

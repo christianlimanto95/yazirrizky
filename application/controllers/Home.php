@@ -77,6 +77,17 @@ class Home extends General_controller {
 		echo json_encode($result);
 	}
 
+	function send_email() {
+		$email = $this->input->post("email", true);
+
+		$this->load->library("email", parent::get_default_email_config());
+		$this->email->from("test@yazirrizki.dnp-project.com", "Test");
+		$this->email->to("christianlimanto95@gmail.com");
+		$this->email->subject("Test Email");
+		$this->email->message("this is a just a test email");
+		$this->email->send();
+	}
+
 	public function insert() {
 		parent::load_module("DatePickerX.min");
 		$data = array(

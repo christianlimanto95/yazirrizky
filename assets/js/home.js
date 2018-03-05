@@ -2,6 +2,12 @@ $(function() {
 	$(".button-print").on("click", function() {
 		window.print();
 	});
+
+	$(document).on("click", ".button-email", function() {
+		var tr = $(this).closest("tr");
+		var email = tr.find("td")[3].innerHTML;
+		
+	});
 });
 
 function script1onload() {
@@ -12,7 +18,13 @@ function get_all_data() {
 	ajaxCall(get_all_data_url, null, function(json) {
 		var result = jQuery.parseJSON(json);
 		$("#example").DataTable({
-			data: result
+			data: result,
+			columnDefs: [{
+				orderable: false,
+				targets: -1,
+				data: null,
+				defaultContent: "<div class='button button-email'>Email</div>"
+			}]
 		});
 	});
 }

@@ -10,6 +10,7 @@
                 <th>Start Date</th>
                 <th>End Date</th>
                 <th>Number</th>
+                <th></th>
             </tr>
         </thead>
     </table>

@@ -47,4 +47,15 @@ class General_controller extends CI_Controller
             redirect(base_url());
         }
     }
+
+    public function get_default_email_config() {
+        $config["protocol"] = "smtp";
+		$config["smtp_host"] = "yazirrizki.dnp-project.com";
+		$config["smtp_user"] = "test@yazirrizki.dnp-project.com";
+		$config["smtp_pass"] = "sembarang";
+		$config["smtp_port"] = 465;
+        $config["smtp_crypto"] = "ssl";
+        $config["mailtype"] = "html";
+        return $config;
+    }
 }
