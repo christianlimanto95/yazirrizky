@@ -7,6 +7,7 @@ require_once("application/core/General_controller.php");
 class Home extends General_controller {
 	public function __construct() {
 		parent::__construct();
+		$this->load->library('session');
 		$this->load->model("Home_model");
 	}
 	
@@ -111,6 +112,7 @@ class Home extends General_controller {
 
 		$this->Home_model->insert($data);
 
+		$this->session->set_flashdata("flash_message", "Insert Done Successfully");
 		header("Location: " . base_url("insert"));
 	}
 
@@ -167,6 +169,7 @@ class Home extends General_controller {
 
 		$this->Home_model->update($data);
 
+		$this->session->set_flashdata("flash_message", "Update Done Successfully");
 		header("Location: " . base_url("update"));
 	}
 
@@ -188,6 +191,7 @@ class Home extends General_controller {
 		$id = $this->input->post("data_id", true);
 		$this->Home_model->delete($id);
 
+		$this->session->set_flashdata("flash_message", "Delete Done Successfully");
 		header("Location: " . base_url("delete"));
 	}
 }

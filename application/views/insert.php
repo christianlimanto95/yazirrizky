@@ -1,5 +1,8 @@
 <div class="content">
     <form method="post" action="<?php echo base_url("home/do_insert"); ?>">
+        <?php if ($this->session->userdata("flash_message")) {
+            echo "<div class='flash-message'>" . $this->session->userdata("flash_message") . "</div>";
+        } ?>
         <div class="form-item">
             <div class="form-question">Your Name</div>
             <div class="form-answer">

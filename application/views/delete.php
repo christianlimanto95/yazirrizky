@@ -12,6 +12,9 @@
 </div>
 <div class="content">
     <form method="post" action="<?php echo base_url("home/do_delete"); ?>">
+        <?php if ($this->session->userdata("flash_message")) {
+            echo "<div class='flash-message'>" . $this->session->userdata("flash_message") . "</div>";
+        } ?>
         <div class="form-item">
             <div class="select select-id" data-value="1" data-value-element=".id-value">
                 <input type="hidden" class="id-value" name="data_id" value="" />

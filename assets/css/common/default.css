@@ -159,6 +159,14 @@ input.form-input {
 	background-color: #1565C0;
 }
 
+.flash-message {
+  width: 100%;
+  padding: 20px;
+  background-color: #C8E6C9;
+  color: #1B5E20;
+  margin-bottom: 50px;
+}
+
 @media all and (max-width: 1279px) {
   .div-mobile {
     display: block;
@@ -195,7 +203,6 @@ input.form-input {
 
   .container {
     padding-top: 0;
+    padding-bottom: 0;
   }
-
-  
 }
