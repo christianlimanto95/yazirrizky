@@ -15,6 +15,7 @@
     </table>
     <div id="piechart"></div>
     <div id="columnchart"></div>
+    <div class="button button-print">Print</div>
 </div>
 <script>
 var get_all_data_url = "<?php echo base_url("home/get_all_data"); ?>";

@@ -182,3 +182,20 @@ input.form-input {
     height: 100vh;
   }
 }
+
+.highcharts-title tspan {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+@media print {
+  .header, .button, .dataTables_length, .dataTables_filter, .dataTables_paginate {
+    display: none !important;
+  }
+
+  .container {
+    padding-top: 0;
+  }
+
+  
+}
