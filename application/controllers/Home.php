@@ -13,6 +13,7 @@ class Home extends General_controller {
 	public function index()
 	{
 		parent::load_module("datatables.min");
+		parent::load_module("highcharts");
 		$data = array(
 			"title" => "Home",
 			"header" => array(
@@ -36,6 +37,25 @@ class Home extends General_controller {
 			));
 		}
 		echo json_encode($dataset);
+	}
+
+	function get_selected_room_count() {
+		$data = $this->Home_model->get_selected_room_count();
+		$arr_data = array();
+		$iLength = sizeof($data);
+		for ($i = 0; $i < $iLength; $i++) {
+			$obj = new stdClass();
+			$obj->name = $data[$i]->room_name;
+			$obj->y = intval($data[$i]->count);
+			array_push($arr_data, $obj);
+		}
+
+		$result = array(
+			"title" => "Overall number of rooms booked",
+			"name" => "Booked",
+			"data" => $arr_data
+		);
+		echo json_encode($result);
 	}
 
 	public function insert() {

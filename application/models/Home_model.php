@@ -16,6 +16,16 @@ class Home_model extends CI_Model
         return $query->result();
     }
 
+    function get_selected_room_count() {
+        $query = $this->db->query("
+            SELECT r.room_name, COUNT(d.room_id) AS count
+            FROM data d, room r
+            WHERE d.room_id = r.room_id
+            GROUP BY r.room_id
+        ");
+        return $query->result();
+    }
+
     function insert($data) {
         $date_item = explode("-", $data["date_start"]);
         $data["date_start"] = $date_item[2] . "-" . $date_item[1] . "-" . $date_item[0];
