@@ -22,4 +22,5 @@
 var get_all_data_url = "<?php echo base_url("home/get_all_data"); ?>";
 var get_selected_room_count_url = "<?php echo base_url("home/get_selected_room_count"); ?>";
 var get_gender_count_url = "<?php echo base_url("home/get_gender_count"); ?>";
+var send_email_url = "<?php echo base_url("home/send_email"); ?>";
 </script>

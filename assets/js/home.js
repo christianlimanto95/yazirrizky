@@ -4,9 +4,15 @@ $(function() {
 	});
 
 	$(document).on("click", ".button-email", function() {
-		var tr = $(this).closest("tr");
-		var email = tr.find("td")[3].innerHTML;
-		
+		var thisElement = $(this);
+		if (!thisElement.hasClass("disabled")) {
+			thisElement.addClass("disabled");
+			var tr = thisElement.closest("tr");
+			var email = tr.find("td")[3].innerHTML;
+			ajaxCall(send_email_url, {email: email}, function(json) {
+				thisElement.removeClass("disabled");
+			});
+		}
 	});
 });
 

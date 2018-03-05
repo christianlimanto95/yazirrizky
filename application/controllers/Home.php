@@ -82,10 +82,11 @@ class Home extends General_controller {
 
 		$this->load->library("email", parent::get_default_email_config());
 		$this->email->from("test@yazirrizki.dnp-project.com", "Test");
-		$this->email->to("christianlimanto95@gmail.com");
+		$this->email->to($email);
 		$this->email->subject("Test Email");
 		$this->email->message("this is a just a test email");
 		$this->email->send();
+		echo $email;
 	}
 
 	public function insert() {

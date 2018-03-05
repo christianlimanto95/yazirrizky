@@ -159,6 +159,12 @@ input.form-input {
 	background-color: #1565C0;
 }
 
+.button.disabled {
+  background-color: #CCC;
+  color: #555;
+  cursor: default;
+}
+
 .flash-message {
   width: 100%;
   padding: 20px;
