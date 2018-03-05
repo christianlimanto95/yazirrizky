@@ -26,6 +26,15 @@ class Home_model extends CI_Model
         return $query->result();
     }
 
+    function get_gender_count() {
+        $query = $this->db->query("
+            SELECT (CASE when d.data_gender = 'm' THEN 'Male' ELSE 'Female' END) AS data_gender, COUNT(d.data_gender) AS count
+            FROM data d
+            GROUP BY d.data_gender
+        ");
+        return $query->result();
+    }
+
     function insert($data) {
         $date_item = explode("-", $data["date_start"]);
         $data["date_start"] = $date_item[2] . "-" . $date_item[1] . "-" . $date_item[0];

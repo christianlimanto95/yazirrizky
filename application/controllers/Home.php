@@ -58,6 +58,24 @@ class Home extends General_controller {
 		echo json_encode($result);
 	}
 
+	function get_gender_count() {
+		$data = $this->Home_model->get_gender_count();
+		$arr_data = array();
+		$iLength = sizeof($data);
+		for ($i = 0; $i < $iLength; $i++) {
+			$obj = new stdClass();
+			$obj->name = $data[$i]->data_gender;
+			$obj->data = array(intval($data[$i]->count));
+			array_push($arr_data, $obj);
+		}
+
+		$result = array(
+			"title" => "Gender Count",
+			"data" => $arr_data
+		);
+		echo json_encode($result);
+	}
+
 	public function insert() {
 		parent::load_module("DatePickerX.min");
 		$data = array(
