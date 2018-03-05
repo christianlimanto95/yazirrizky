@@ -75,12 +75,17 @@ input.input-number {
 }
 
 .dialog {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
 	z-index: 500;
+	display: none;
+}
+
+.dialog.show {
+	display: block;
 }
 
 .dialog-background {

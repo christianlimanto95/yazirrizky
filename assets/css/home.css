@@ -1,7 +1,5 @@
-button {
-	float: left;
-}
-
-input {
-	margin-left: 50px;
+.content {
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 50px;
 }

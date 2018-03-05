@@ -7,6 +7,15 @@ class Home_model extends CI_Model
         parent::__construct();
     }
 
+    function get_all_data() {
+        $query = $this->db->query("
+            SELECT d.data_id, d.data_name, (CASE when d.data_gender = 'm' THEN 'Male' ELSE 'Female' END) AS data_gender, d.data_email, r.room_name, d.data_date_start, d.data_date_end, d.data_number
+            FROM data d, room r
+            WHERE r.room_id = d.room_id
+        ");
+        return $query->result();
+    }
+
     function insert($data) {
         $date_item = explode("-", $data["date_start"]);
         $data["date_start"] = $date_item[2] . "-" . $date_item[1] . "-" . $date_item[0];

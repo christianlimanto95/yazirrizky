@@ -12,6 +12,7 @@ class Home extends General_controller {
 	
 	public function index()
 	{
+		parent::load_module("datatables.min");
 		$data = array(
 			"title" => "Home",
 			"header" => array(
@@ -23,6 +24,18 @@ class Home extends General_controller {
 		);
 		
 		parent::view("home", $data);
+	}
+
+	function get_all_data() {
+		$data = $this->Home_model->get_all_data();
+		$iLength = sizeof($data);
+		$dataset = array();
+		for ($i = 0; $i < $iLength; $i++) {
+			array_push($dataset, array(
+				$data[$i]->data_id, $data[$i]->data_name, $data[$i]->data_gender, $data[$i]->data_email, $data[$i]->room_name, $data[$i]->data_date_start, $data[$i]->data_date_end, $data[$i]->data_number
+			));
+		}
+		echo json_encode($dataset);
 	}
 
 	public function insert() {
@@ -120,7 +133,6 @@ class Home extends General_controller {
 	}
 
 	public function delete() {
-		parent::load_module("DatePickerX.min");
 		$data = array(
 			"title" => "Delete",
 			"header" => array(

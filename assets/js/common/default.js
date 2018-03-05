@@ -1,3 +1,5 @@
+var script1loaded = false;
+
 $(function() {
     $(document).on("keydown", "input[data-input-type='number']", function(e) {
         isNumber(e);
@@ -42,8 +44,19 @@ $(function() {
             $(valueElement).val(value);
             select.trigger("onchanged");
         }
-    });
-    
+	});
+	
+	$(".dialog-close-icon").on("click", function() {
+		var dialog = $(this).closest(".dialog");
+		closeDialog(dialog);
+	});
+
+	$(document).on("keyup", function(e) {
+		if (e.which == 27) {
+			closeDialog();
+		}
+	});
+
     $(document).on("click", function(e) {
 		$(".select").removeClass("show");
 	});
@@ -65,6 +78,20 @@ function changeSelectValue(select, value) {
 	var valueElement = select.data("value-element");
 	$(valueElement).val(value);
 	select.trigger("onchanged");
+}
+
+function showDialog(element) {
+	$("body").addClass("fixed");
+	$(element).addClass("show");
+}
+
+function closeDialog(element) {
+	if (element != null) {
+		element.removeClass("show");
+	} else {
+		$(".dialog").removeClass("show");
+	}
+	$("body").removeClass("fixed");
 }
 
 function isNumber(e) {

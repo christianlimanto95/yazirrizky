@@ -19,6 +19,10 @@ body {
   overflow-x: hidden;
 }
 
+body.fixed {
+  overflow-y: hidden;
+}
+
 .section {
   width: 100vw;
   background-color: #F1F1F1;

@@ -1,8 +1,8 @@
-<div class="dialog">
+<div class="dialog dialog-delete">
     <div class="dialog-background">
         <div class="dialog-box">
             <div class="dialog-close-icon" style="background-image: url(<?php echo base_url("assets/icons/ic_close_black_24px.svg"); ?>);"></div>
-            <div class="dialog-text">Are you sure you want do delete?</div>
+            <div class="dialog-text">Are you sure you want to delete?</div>
             <div class="dialog-button-container">
                 <div class="dialog-button dialog-button-cancel">CANCEL</div>
                 <div class="dialog-button dialog-button-delete">DELETE</div>
